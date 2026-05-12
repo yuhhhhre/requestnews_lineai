@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 @Configuration
-@EnableScheduling
 @EnableAsync
 public class NewsLineApplication {
 
