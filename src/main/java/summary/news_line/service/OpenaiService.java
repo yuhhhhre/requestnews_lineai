@@ -1,7 +1,7 @@
 package summary.news_line.service;
 
-import com.openai.services.blocking.ChatService;
 import org.springframework.stereotype.Service;
+
 import summary.news_line.logic.OpenaiAccess;
 
 @Service

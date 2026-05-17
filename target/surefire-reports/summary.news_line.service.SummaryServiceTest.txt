@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: summary.news_line.service.SummaryServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.080 s <<< FAILURE! -- in summary.news_line.service.SummaryServiceTest
+summary.news_line.service.SummaryServiceTest.testSummary -- Time elapsed: 0.055 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "summary.news_line.service.SummaryService.summary(String, String)" because "instance" is null
+	at summary.news_line.service.SummaryServiceTest.testSummary(SummaryServiceTest.java:30)
+

@@ -1,0 +1,12 @@
+summary/news_line/service/BbcNewsJP.class
+summary/news_line/entity/Choice.class
+summary/news_line/service/NewsArticle.class
+summary/news_line/Controllers/NewsLineController.class
+summary/news_line/entity/ErrorDetail.class
+summary/news_line/NewsLineApplication.class
+summary/news_line/entity/Usage.class
+summary/news_line/entity/OpenaiCompletion.class
+summary/news_line/service/BbcNewsEN.class
+summary/news_line/entity/PromptTokenDetail.class
+summary/news_line/logic/OpenaiAccess.class
+summary/news_line/entity/CompletionTokenDetail.class

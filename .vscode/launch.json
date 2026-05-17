@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "NewsLineApplication",
+            "request": "launch",
+            "mainClass": "summary.news_line.NewsLineApplication",
+            "projectName": "news-line"
+        }
+    ]
+} // {
+//     "version": "0.2.0"
+//     "configurations": [
+//         {
+//             "type": "java",
+//             "name": "Spring Boot-NewsLineApplication",
+//             "request": "launch"
+//         }
+//     ]
+    
+// }
