@@ -19,29 +19,22 @@ import java.util.List;
 @Service
 public class NewsLineService {
 
-    /** このメッセージ（前後空白除去後）と一致したときだけ BBC ニュースを取得する。 */
-    private static final String NEWS_COMMAND_JA = "日本語";
-    private static final String NEWS_COMMAND_EN = "英語";
-
     private final MessagingApiClient messagingApiClient;
-    private final BbcNewsJP bbcNewsJP;
-    private final BbcNewsEN bbcNewsEN;
     private final MessageFormatter messageFormatter;
     private final LineReplyService lineReplyService;
     private final NewsFetchService newsFetchService;
+    private final NewsCommandService newsCommandService;
 
     public NewsLineService(MessagingApiClient messagingApiClient,
-                           BbcNewsJP bbcNewsJP,
-                           BbcNewsEN bbcNewsEN,
                            MessageFormatter messageFormatter,
                            LineReplyService lineReplyService,
-                           NewsFetchService newsFetchService) {
+                           NewsFetchService newsFetchService,
+                           NewsCommandService newsCommandService) {
         this.messagingApiClient = messagingApiClient;
-        this.bbcNewsJP = bbcNewsJP;
-        this.bbcNewsEN = bbcNewsEN;
         this.messageFormatter = messageFormatter;
         this.lineReplyService = lineReplyService;
         this.newsFetchService = newsFetchService;
+        this.newsCommandService = newsCommandService;
     }
 
     public void handleTextMessageEvent(MessageEvent event) {
@@ -60,8 +53,9 @@ public class NewsLineService {
 
         TextMessageContent message = (TextMessageContent) event.message();
         String userText = message.text().trim();
+        String newsCommand = newsCommandService.analyzeCommand(userText);
 
-        if (NEWS_COMMAND_JA.equals(userText)) {
+        if ("Japanese".equals(newsCommand)) {
             List<NewsArticle> articles = newsFetchService.fetchJapaneseNews();
             
             String messageBuilder = messageFormatter.formatNews(articles);
@@ -71,7 +65,7 @@ public class NewsLineService {
             return;
         }
 
-        if (NEWS_COMMAND_EN.equals(userText)) {
+        if ("English".equals(newsCommand)) {
             List<NewsArticle> articles = newsFetchService.fetchEnglishNews();
 
             String messageBuilder = messageFormatter.formatNews(articles);

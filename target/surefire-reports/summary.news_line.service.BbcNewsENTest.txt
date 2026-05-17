@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: summary.news_line.service.BbcNewsENTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.641 s <<< FAILURE! -- in summary.news_line.service.BbcNewsENTest
+summary.news_line.service.BbcNewsENTest.testFetchNewsEN -- Time elapsed: 0.625 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <null> but was: <[summary.news_line.service.NewsArticle@308a6984, summary.news_line.service.NewsArticle@66b72664, summary.news_line.service.NewsArticle@7a34b7b8]>
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1204)
+	at summary.news_line.service.BbcNewsENTest.testFetchNewsEN(BbcNewsENTest.java:29)
+
